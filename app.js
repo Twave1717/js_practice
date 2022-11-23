@@ -1,17 +1,17 @@
-// 주석
-console.log(234);
+// parseInt()   string을 int형으로 변환
+// isNaN()      Number인지 아닌지 판단
+// <= >= && ||  비교연산자
+// ==           -> 내용만 같으면 됨. 자료형 판단 X
+// ===          -> 내용과 자료형까지 판단
 
-const player = {
-    name: "기용",
-    points: 100,
-    alive: true
-};
+const age = prompt("How old are you?");
 
-console.log(player.name);
-
-player.lasName = "정"
-
-// object 전체만 constant
-// 안의 각각 정보는 let으로 저장
-
-console.log(player["name"])
+if(isNaN(parseInt(age))){
+    console.log("Please Write right number");
+}
+else if (age < 20){
+    console.log("You are not adult");
+}
+else{
+    console.log("부어라 마셔라");
+}
