@@ -1,17 +1,16 @@
-// parseInt()   string을 int형으로 변환
-// isNaN()      Number인지 아닌지 판단
-// <= >= && ||  비교연산자
-// ==           -> 내용만 같으면 됨. 자료형 판단 X
-// ===          -> 내용과 자료형까지 판단
+// h1 html element mdn 검색
 
-const age = prompt("How old are you?");
+const h1 = document.querySelector("h1");
 
-if(isNaN(parseInt(age))){
-    console.log("Please Write right number");
-}
-else if (age < 20){
-    console.log("You are not adult");
-}
-else{
-    console.log("부어라 마셔라");
-}
+ function handleTitleClick(){
+    const clickedClass = "clicked"; // 반복 줄이고 체크 가능해짐.
+
+    if(h1.className === clickedClass){
+        h1.className = "";
+    } else{
+        h1.className = clickedClass;
+    }
+        // CSS를 직접 지정하지 않고 class를 지정한다.
+ }
+
+ h1.addEventListener("click", handleTitleClick);
