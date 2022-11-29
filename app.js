@@ -1,10 +1,32 @@
-// h1 html element mdn 검색
-// toggle()
+const loginForm = document.querySelector(".login-form");
+const loginInput = document.querySelector(".login-form input");
+const hello = document.querySelector("h1");
 
-const h1 = document.querySelector("h1");
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
 
- function handleTitleClick(){
-    h1.classList.toggle("clicked");
- }
+function paintGreetings(){
+    const username = localStorage.getItem(USERNAME_KEY);
+    hello.innerText = `Hello ${username}`;
+    hello.classList.remove(HIDDEN_CLASSNAME);
+}
 
- h1.addEventListener("click", handleTitleClick);
+function onLoginSubmit(event){
+    event.preventDefault();
+
+    const username = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+
+    localStorage.setItem(USERNAME_KEY, username);
+    paintGreetings();
+}
+
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null){
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+}else{
+    paintGreetings();
+}
