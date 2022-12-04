@@ -1,0 +1,43 @@
+body{
+    background-size: 100%;
+}
+
+footer span{
+    background-color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+.say_hi{
+    text-align: center;
+    font-size: 70px;
+}
+
+#login{
+    width: 30%;
+    font-size: 60px;
+}
+
+.todo-box{
+    font-size: 40px;
+    padding: 5px;
+    border: 1px solid;
+    height: 50%;
+    width: 50%;
+    position:fixed;
+    transform: translate(50%, 10%);
+    background-color: white;
+}
+
+#todo-input{
+    position: relative;
+    width: 95%;
+    font-size: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+}
+
